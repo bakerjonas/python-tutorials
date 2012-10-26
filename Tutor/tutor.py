@@ -5,20 +5,20 @@
 x=1
 if x is None:
     x=0
-    print 'Undefined, set to zero'
+    print('Undefined, set to zero' )
 elif x == 0:
-    print 'Zero'
+    print('Zero' )
 elif x < 0:
-    print 'Negtive'
+    print('Negtive' )
 else:
-    print 'Positive'
+    print('Positive' )
 
 
 ###
 
 n=0
 while n < 100:
-    print 'All work and no play'
+    print('All work and no play')
     if n == 10:
         n += 10
         continue
@@ -30,13 +30,13 @@ while n < 100:
 
 foo = [1, 2, 75, 6, 7, 'tjohej!']
 for i in foo:
-    print i
+    print(i)
 for i in range(100):
     if i % 10 == 0:
-        print i
+        print(i)
 else:
     pass
-print range(1,10, 2)
+print(range(1,10, 2))
 
 ###
 
@@ -51,12 +51,12 @@ def raboof(x, y=5):
     return x**y * raboof.foo
 raboof.foo = 0.1
 
-print raboof(2)
+print(raboof(2))
 
 ###
 
 #f = open('foo.txt', 'r')
-#print f.readlines()
+#print(f.readlines())
 
 #g = open('bar.txt', 'w')
 
@@ -64,7 +64,7 @@ print raboof(2)
 #for i in f:
 #    l = i.strip().split()
 #    if len(l) > 0:
-#        print >> g, l[0]
+#        print(>> g, l[0])
 #f.close()
 #g.close()
 
@@ -74,7 +74,7 @@ import sys
 from os import environ
 import numpy as np
 
-print sys.path, environ['PATH']
+print(sys.path, environ['PATH'])
 a = np.array([1, 2, 3])
 dir(sys)
 dir(a)
@@ -100,10 +100,10 @@ class Foobar:
 
 a = Foobar(1)
 b = Foobar(42)
-print a, b # invokes __str__()
-print b.double()
+print(a, b) # invokes __str__()
+print(b.double())
 Foobar.bar = False # set global class variable
-print a, b
+print(a, b)
 
 #####
 
@@ -116,22 +116,22 @@ e = np.ndarray((10, 10, 100), dtype='float')
 f = np.array(e)
 g = np.ones_like(d)
 
-print a
-print b
-print c
-print d
-print e
-print f
-print g
+print(a)
+print(b)
+print(c)
+print(d)
+print(e)
+print(f)
+print(g)
 
 ###
 
 a = np.random.rand(5,5)
-print a.shape
-print a.size
-print a.ndim
-print a.dtype.name
-print a
+print(a.shape)
+print(a.size)
+print(a.ndim)
+print(a.dtype.name)
+print(a)
 
 ###
 
@@ -162,12 +162,12 @@ linalg.cholesky(a)
 ###
 
 a = np.random.rand(10,10)
-print a[3, 4]
-print a[1, :]
-print a[0:4, 6:9]
+print(a[3, 4])
+print(a[1, :])
+print(a[0:4, 6:9])
 for row in a:
-    print row
+    print(row)
 
 for i in np.nditer(a):
-    print i
+    print(i)
 
