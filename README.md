@@ -1,4 +1,4 @@
-python-examples
+python-tutorials
 ===============
 
-Examples for the Python workshop thought at UiT
+Slides and examples for the Python workshop thought at UiT.
