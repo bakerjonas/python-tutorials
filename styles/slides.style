@@ -28,7 +28,7 @@
   pageTemplates:
     coverPage:
         frames: []
-            [3cm, -4cm, 70%, 100%]
+            [3cm, 0cm, 70%, 70%]
         showHeader : false
         showFooter : false
         background : ../styles/cover.png
@@ -91,8 +91,8 @@
     base:
       parent: null
       fontName: stdFont
-      fontSize: 14
-      leading: 12
+      fontSize: 18
+      leading: 22
       leftIndent: 0
       rightIndent: 0
       firstLineIndent: 0
@@ -100,7 +100,7 @@
       spaceBefore: 0
       spaceAfter: 0
       bulletFontName: stdFont
-      bulletFontSize: 14
+      bulletFontSize: 18
       bulletIndent: 0
       textColor: black
       backColor: null
@@ -318,6 +318,7 @@
       parent: heading
       fontName: stdBold
       fontSize: 175%
+      spaceAfter: 16
 
     heading2:
       parent: heading
