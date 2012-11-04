@@ -1,10 +1,14 @@
-n=0
-while n < 100:
-    print('All work and no play')
-    if n == 10:
-        n += 10
-        continue
-    elif n == 25:
+a, b = 0, 1
+
+while b < 1000:
+    if a >= 500:
         break
-    n += 1
+    if a == 377:
+        print
+    if a > 300:
+        a += 10
+        print('All work and no play ')
+        continue
+    print b,
+    a, b = b, a+b
 

@@ -1,11 +1,14 @@
-pyfiles = class.py dynamic.py for.py funcdef.py ifelse.py import.py \
-object.py readfile.py silly.py vars.py while.py writefile.py 
+pyfiles = nums.py vars.py strings.py string_ops.py string_methods.py \
+		  lists.py tuples.py dicts.py ifelse.py \
+		  while.py for.py looptricks.py import.py \
+		  readfile.py writefile.py funcdef.py \
+		  class.py object.py dynamic.py 
 
 all: Intro.pdf 
 
 .PHONY: Intro.pdf
 Intro.pdf: Intro.rst 
-	rst2pdf --stylesheet-path=../styles -b 1 -s slides -s murphy $<
+	rst2pdf --stylesheet-path=../styles -b 1 -s slides -s manni $<
 
 .PHONY: Notebook.py
 Notebook.py: 
