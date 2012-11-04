@@ -156,6 +156,24 @@ Function definition
     :linenos:
     :include: funcdef.py
 
+Function definition
+----------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: funcdef2.py
+
+Function definition
+----------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: funcdef3.py
+
+Recursive functions
+----------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: recursion.py
+
 Zen of functions
 ----------------------------------------------------------
 * Functions should be short 
@@ -163,21 +181,50 @@ Zen of functions
 * Functions should have a docstring
 * Document what a function does, not how, that should be obvious
 
-Methods
-----------------------------------------------------------
-
-dir()
-
-Builtin functions
-----------------------------------------------------------
-
-dir()
-
 Getting help
 ----------------------------------------------------------
+In iPython:
 
-Docstrings
+.. code-block:: pycon
+    
+    >>> dir?
+    >>> dir()             # dir() is a Python builtin function
+    >>> dir(__builtin__)
+    >>> dir("foo")
+    >>> dir(42)
+
+Using ``pydoc``:
+
+.. code-block:: console
+
+    $ pydoc __builtin__
+    $ pydoc numpy
+    $ pydoc -p 8080
+    pydoc server ready at http://localhost:8080/
+
+| Least but not last: 
+| http://docs.python.org
+| http://google.com
+
+Some important built-in functions
 ----------------------------------------------------------
+.. code-block:: python
+
+    abs(x)          # Return absolute values of x
+    all(list)       # True if all elements are True
+    any(list)       # True if any element is True
+    cmp(a, b)       # Compare a and b
+    dir()           # Return a list of "members"
+    eval(str)       # Evaluate a string as a Python experssion
+    filter(f, list) # Return elements for which f evaluates true
+    map(f, list)    # Apply f to every element in list
+    max(), min()    # Minimum and maximum of values
+    pow(x, y)       # x^y
+    reduce(f, list) # Reduce list with f
+    str(o)          # Generate a string from an object
+    sum(list)       # Sum all elements
+
+
 
 Working with files
 ----------------------------------------------------------
