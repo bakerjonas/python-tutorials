@@ -32,7 +32,7 @@ About Python
 
 Using the Python interpreter
 ----------------------------------------------------------
-There default Python interpreter is called ``python``. It is used to run
+The default Python interpreter is called ``python``. It is used to run
 scripts and for simple interactive work:
 
 .. code-block:: shell
@@ -137,8 +137,8 @@ Tuples and sets
 
 Dictionaries  
 ----------------------------------------------------------
-Dictionaries are exterely powerful data containers. They behave like an
-unordered set of key: value pairs, with the requirement that the keys are
+Dictionaries are powerful data containers. They behave like an
+unordered set of ``key:value`` pairs, with the requirement that the keys are
 unique.
 
 .. code-block:: python
@@ -176,10 +176,10 @@ Recursive functions
 
 Zen of functions
 ----------------------------------------------------------
-* Functions should be short 
-* Functions should do only one thing, and do it well
-* Functions should have a docstring
-* Document what a function does, not how, that should be obvious
+* Functions should be short. 
+* Functions should do only one thing, and do it well.
+* Functions should have a docstring.
+* Document *what* a function does, not *how** it does it.
 
 Getting help
 ----------------------------------------------------------
@@ -197,14 +197,13 @@ Using ``pydoc``:
 
 .. code-block:: console
 
-    $ pydoc __builtin__
-    $ pydoc numpy
+    $ pydoc dir
     $ pydoc -p 8080
     pydoc server ready at http://localhost:8080/
 
 | Least but not last: 
-| http://docs.python.org
-| http://google.com
+|   http://docs.python.org
+|   http://google.com
 
 Some important built-in functions
 ----------------------------------------------------------
@@ -223,7 +222,6 @@ Some important built-in functions
     reduce(f, list) # Reduce list with f
     str(o)          # Generate a string from an object
     sum(list)       # Sum all elements
-
 
 
 Working with files
