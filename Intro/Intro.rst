@@ -184,7 +184,7 @@ Zen of functions
 * Functions should be short. 
 * Functions should do only one thing, and do it well.
 * Functions should have a docstring.
-* Document *what* a function does, not *how** it does it.
+* Document *what* a function does, not *how* it does it.
 
 Getting help
 ----------------------------------------------------------
@@ -209,25 +209,6 @@ Using ``pydoc``:
 | Least but not last: 
 |   http://docs.python.org
 |   http://google.com 
-
-Some important built-in functions
-----------------------------------------------------------
-.. code-block:: python
-
-    abs(x)          # Return absolute values of x
-    all(list)       # True if all elements are True
-    any(list)       # True if any element is True
-    cmp(a, b)       # Compare a and b
-    dir()           # Return a list of "members"
-    eval(str)       # Evaluate a string as a Python experssion
-    filter(f, list) # Return elements for which f evaluates true
-    map(f, list)    # Apply f to every element in list
-    max(), min()    # Minimum and maximum of values
-    pow(x, y)       # x^y
-    reduce(f, list) # Reduce list with f
-    str(o)          # Generate a string from an object
-    sum(list)       # Sum all elements
-
 
 Input and output
 ----------------------------------------------------------
@@ -267,9 +248,90 @@ The search path can also be configured in Python:
     sys.path.append('/path/to/my/stuff')
     print(sys.path)
 
+Writing scripts
+---------------------------------------------------------
+Instead of working inside the Python interpreter, we can write scripts using
+our favorite editor (e.g. PyCharm) and save them. We can then execute the
+scripts when we need them: 
+
+.. code-block:: console
+
+    $ python elderberry.py
+
+Under UNIX we can make the scripts executable by adding a *shebang* to the
+first line in the of the script, and then change the file mode:
+
+.. code-block:: console
+
+    $ sed -i '1i #!/usr/bin/env python' elderberry.py
+    $ chmod a+x elderberry.py
+
+.. code-block:: python
+
+    #!/usr/bin/env python
+    print('Your mother was a hamster.')
+
+On Windows you don't have to do anything special, since the Python installer
+registers file with a ``.py`` ending as Python programs.
+
+Organizing your code: modules 
+---------------------------------------------------------
+When you organize your work in files, these files become Python modules if
+they are in your ``PYTHONPATH``:
+
+.. code-block:: pycon
+
+    >>> import elderberry as eb
+    >>> eb.berry('lingonberry')
+
+Organizing your code: packages
+---------------------------------------------------------
+Packages are a way of structuring Python’s module namespace by using *dotted
+module names*::
+
+    cheese/                     Top-level package
+        __init__.py             Initialize the sound package
+        swiss/                  Subpackage for swiss chees
+            __init__.py
+            emmental.py
+            gruyere.py
+        dutch/                  Subpackage for dutch cheese
+            __init__.py
+            gouda.py
+            maasdam.py
+
+Organizing your code: importing packages
+---------------------------------------------------------
+
+.. code-block:: python
+    :linenos:
+
+    from cheese.dutch import maasdam
+    for i in masdam.holes(): 
+        eat(i)
+
+
+    
+Some important built-in functions
+----------------------------------------------------------
+.. code-block:: python
+
+    abs(x)          # Return absolute values of x
+    all(list)       # True if all elements are True
+    any(list)       # True if any element is True
+    cmp(a, b)       # Compare a and b
+    dir()           # Return a list of "members"
+    eval(str)       # Evaluate a string as a Python experssion
+    filter(f, list) # Return elements for which f evaluates true
+    map(f, list)    # Apply f to every element in list
+    max(), min()    # Minimum and maximum of values
+    pow(x, y)       # x^y
+    reduce(f, list) # Reduce list with f
+    str(o)          # Generate a string from an object
+    sum(list)       # Sum all elements
+
 The standard library
 ----------------------------------------------------------
-
 .. code-block:: python
     :linenos:
     :include: sys.py
@@ -278,28 +340,43 @@ The standard library
     :linenos:
     :include: os.py
 
-The standard library: math
+The standard library: Math
 ----------------------------------------------------------
-
 .. code-block:: python
     :linenos:
     :include: math.py
 
-The standard library: compression
+The standard library: Compression
 ----------------------------------------------------------
-
 .. code-block:: python
     :linenos:
     :include: zlib.py
 
-The standard library: urls
+The standard library: A web server
 ----------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: httpd.py
 
+The standard library: Input from urls
+----------------------------------------------------------
 .. code-block:: python
     :linenos:
     :include: urls.py
 
-Coding style (PEP 8)
+The standard library: Sending mail
+----------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: smtp.py
+
+Functional programming 
+---------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: functional.py
+
+Coding style (`PEP 8`_)
 ----------------------------------------------------------
 * Use 4-space indentation, and no tabs.
 * Wrap lines so that they don’t exceed 79 characters.
@@ -344,3 +421,4 @@ The Zen of (Python) programing
 #.   If the implementation is easy to explain, it may be a good idea.
 #.   Namespaces are one honking great idea -- let's do more of those!
 
+.. _`PEP 8`: http://www.python.org/dev/peps/pep-0008/
