@@ -14,8 +14,8 @@
 
 .. raw:: pdf
 
-   Transition Dissolve 1
    SetPageCounter 0
+   Transition Dissolve 1
    PageBreak oneColumn
 
 About Python
@@ -30,9 +30,14 @@ About Python
 * Python is extensible
 * Python is just the language for you.
 
+.. raw:: pdf
+
+   PageBreak 
+   Transition Dissolve 0
+
 Using the Python interpreter
 ----------------------------------------------------------
-There default Python interpreter is called ``python``. It is used to run
+The default Python interpreter is called ``python``. It is used to run
 scripts and for simple interactive work:
 
 .. code-block:: shell
@@ -137,8 +142,8 @@ Tuples and sets
 
 Dictionaries  
 ----------------------------------------------------------
-Dictionaries are exterely powerful data containers. They behave like an
-unordered set of key: value pairs, with the requirement that the keys are
+Dictionaries are powerful data containers. They behave like an
+unordered set of ``key:value`` pairs, with the requirement that the keys are
 unique.
 
 .. code-block:: python
@@ -176,10 +181,10 @@ Recursive functions
 
 Zen of functions
 ----------------------------------------------------------
-* Functions should be short 
-* Functions should do only one thing, and do it well
-* Functions should have a docstring
-* Document what a function does, not how, that should be obvious
+* Functions should be short. 
+* Functions should do only one thing, and do it well.
+* Functions should have a docstring.
+* Document *what* a function does, not *how** it does it.
 
 Getting help
 ----------------------------------------------------------
@@ -197,14 +202,13 @@ Using ``pydoc``:
 
 .. code-block:: console
 
-    $ pydoc __builtin__
-    $ pydoc numpy
+    $ pydoc dir
     $ pydoc -p 8080
     pydoc server ready at http://localhost:8080/
 
 | Least but not last: 
-| http://docs.python.org
-| http://google.com
+|   http://docs.python.org
+|   http://google.com 
 
 Some important built-in functions
 ----------------------------------------------------------
@@ -225,13 +229,15 @@ Some important built-in functions
     sum(list)       # Sum all elements
 
 
-
-Working with files
+Input and output
 ----------------------------------------------------------
+
 .. code-block:: python
     :linenos:
     :include: writefile.py
 
+Input and output
+----------------------------------------------------------
 .. code-block:: python
     :linenos:
     :include: readfile.py
@@ -242,27 +248,56 @@ Modules and namespaces
     :linenos:
     :include: import.py
 
+Module search paths
+----------------------------------------------------------
+
+How and where Python looks for available modules can be configured using the
+``PYTHONPATH`` environment variable:
+
+.. code-block:: console
+
+    $ export PYTHONPATH=$PYTHONPATH:/path/to/my/stuff
+    $ python elderberry.py
+
+The search path can also be configured in Python:
+
+.. code-block:: python
+
+    import sys
+    sys.path.append('/path/to/my/stuff')
+    print(sys.path)
+
 The standard library
 ----------------------------------------------------------
 
-OMG!
-
-Exceptions and errors
-----------------------------------------------------------
-
-
-Classes
-----------------------------------------------------------
 .. code-block:: python
     :linenos:
-    :include: class.py
+    :include: sys.py
 
-Python objects
-----------------------------------------------------------
 .. code-block:: python
     :linenos:
-    :include: object.py
+    :include: os.py
 
+The standard library: math
+----------------------------------------------------------
+
+.. code-block:: python
+    :linenos:
+    :include: math.py
+
+The standard library: compression
+----------------------------------------------------------
+
+.. code-block:: python
+    :linenos:
+    :include: zlib.py
+
+The standard library: urls
+----------------------------------------------------------
+
+.. code-block:: python
+    :linenos:
+    :include: urls.py
 
 Coding style (PEP 8)
 ----------------------------------------------------------
@@ -308,16 +343,4 @@ The Zen of (Python) programing
 #.   If the implementation is hard to explain, it's a bad idea.
 #.   If the implementation is easy to explain, it may be a good idea.
 #.   Namespaces are one honking great idea -- let's do more of those!
-
-Sphinx
-----------------------------------------------------------
-
-Virtual Python environments
-----------------------------------------------------------
-
-Dynamic nature of Python
-----------------------------------------------------------
-.. code-block:: python
-    :linenos:
-    :include: dynamic.py
 
