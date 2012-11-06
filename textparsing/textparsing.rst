@@ -184,6 +184,7 @@ Let us take a look at the participant list and display the participants with uit
 The program
 ----------------------------------------------------------
 
+participants.py
 
 .. code-block:: python
     :include: participants.py
@@ -253,6 +254,8 @@ Search and grab
 
 Find all emails
 
+findemails.py
+
 .. code-block:: python
     :include: findemails.py
   
@@ -290,6 +293,8 @@ Search and replace
 Scramble all emails
 
 Add "-nospam" to all emails to prevent spam-bots to get hold of published emails.
+
+scrambleemails.py
 
 .. code-block:: python
     :include: scrambleemails.py
@@ -366,6 +371,8 @@ Writing csv files
 
 The writer has a method, writerow, that will take a list and create one line in the csv file.
 
+writeparticipants2csv.py
+
 .. code-block:: python
     :include: writeparticipants2csv.py
 
@@ -374,6 +381,8 @@ Reading csv files
 ----------------------------------------------------------
 
 Reading csv files is equally simple.
+
+readparticipantsfromcsv.py
 
 .. code-block:: python
     :include: readparticipantsfromcsv.py
@@ -423,6 +432,8 @@ A special submodule, lxml.html, can be used to parse and create html.
 Writing an XML file
 ----------------------------------------------------------
 
+writeparticipants2xml.py
+
 .. code-block:: python
       :include: writeparticipants2xml.py
 
@@ -452,6 +463,8 @@ Parsing an XML file
 lxml provides several ways of parsing xml data, xpath, objectify, events.
 
 Eventbased parsing.
+
+readparticipantsfromxml.py
 
 .. code-block:: python
       :include: readparticipantsfromxml.py
