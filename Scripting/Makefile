@@ -1,4 +1,4 @@
-base = Intro
+base = Scripting
 all: $(base).pdf 
 
 .PHONY: $(base).pdf
