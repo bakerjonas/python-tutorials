@@ -6,4 +6,5 @@ def oroborus(n, m=10):
     print "Unwinding", n
     return k + n
 
-oroborus(5)
+if __name__ == '__main__':
+    oroborus(5)

@@ -3,4 +3,5 @@ def range_example():
         x += 2
         print x
 
-range_example()
+if __name__ == '__main__':
+    range_example()
