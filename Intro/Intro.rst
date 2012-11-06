@@ -29,6 +29,7 @@ About Python
   other Python programs.
 * Python is extensible
 * Python is just the language for you.
+* Python is just great!
 
 .. raw:: pdf
 
