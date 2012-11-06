@@ -8,4 +8,5 @@ def input_example():
     elif a < 0:
         print 'Negative'
 
-input_example()
+if __name__ == '__main__':
+    input_example()

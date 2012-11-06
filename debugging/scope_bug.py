@@ -13,4 +13,5 @@ def do_loops():
     incr = 2
     some_func()
 
-do_loops()
+if __name__ == '__main__':
+    do_loops()

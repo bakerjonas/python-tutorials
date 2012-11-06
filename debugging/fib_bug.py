@@ -6,4 +6,5 @@ def fib2(n = 1000):
         a, b = a, a+b
     return result, a, b
 
-fib2()
+if __name__ == '__main__':
+    fib2()
