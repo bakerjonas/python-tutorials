@@ -1,6 +1,6 @@
 import csv
 
-fd = file("Python-workshop-participants.rst", "r").read()
+fd = file("Python-workshop-participants.rst", "r")
 
 participants = list()
 for line in fd.readlines():

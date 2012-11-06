@@ -26,6 +26,25 @@ Overview
 * Working with spreadsheets, the csv module
 * XML parsing
 
+A word about style.
+----------------------------------------------------------
+
+Try to be as explicit as possible.  Readability counts.
+
+Example:
+
+  Prefer dict() over {}, ``dict(a=1, b=2)`` is better than ``{"a" = 1, "b" = 2}``
+
+  A novice can search the documentation for dict, but not for {.
+
+  The same goes for list, tuple and so on.
+
+The evil side, PERL:  What the h... does ``for(<>);`` mean???
+
+A word of advice from the trenches:  If you think you have written a really clever
+piece of code, think again.  Will you be able to understand this in six months?
+
+
 Manipulating text using builtin methods
 ----------------------------------------------------------
 
@@ -186,7 +205,7 @@ The output
 	name=           Tan Thi Nguyen email= tan.t.nguyen@uit.no affiliation=                 BFE
 	name=          Espen Robertsen email=espen.m.robertsen@uit.no affiliation=           Norstruct
 
-Exercises::
+Exercises
 
 #. List the non-uit emails.
 #. Count the number of participants based from each email domain.
@@ -200,7 +219,7 @@ Regexps
 ----------------------------------------------------------
 
 For more advanced text manipulations one needs to use regexps (REGular EXPressions).
-*
+
 * Regexps is a language for matching text.  
 * The syntax is really cryptic
 * Example regexp matching dates in format yyyy-MM-dd
@@ -365,7 +384,19 @@ Or view it in a spreadsheet
 .. image:: spreadsheet.png
 
 
-XML parsing
+Working with xls files.
+----------------------------------------------------------
+
+If you have a ton of EXCEL files, you do not need to manually convert them into csv to be able
+to work with them in python.
+
+There are several module available for working directly with xls files.
+
+http://www.python-excel.org/
+
+is a good start.
+
+XML data format
 ----------------------------------------------------------
 
 XML (eXtended Markup Language) is a standard for transporting data between different systems.
@@ -375,10 +406,81 @@ It is widely used in many large projects, but can be very complex to deal with.
 Due to its flexible format it is prohibitively hard to use regular string methods or regexps to
 parse XML files.
 
-One needs a parser, and again, python has a module for it, lxml.
+One needs a full-blown parser, and again, python has a module for it, lxml.
+
+XML resembles HTML, everything is embedded in tags, <tag>data</tag>.
 
 The lxml module
 ----------------------------------------------------------
 
+Extensive documentation can be found at http://lxml.de/tutorial.html
 
-* Parsing an XML file
+The lxml module can be used to both write and read xml files.
+
+A special submodule, lxml.html, can be used to parse and create html.
+
+
+Writing an XML file
+----------------------------------------------------------
+
+.. code-block:: python
+      :include: writeparticipants2xml.py
+
+Results in this xml output.
+
+.. code-block:: xml
+
+  <participants>
+    <participant>
+      <name>Heike Fliegl</name>
+      <email>heike.fliegl@kjemi.uio.no</email>
+      <affiliation>CTCC/UiO</affiliation>
+    </participant>
+    <participant>
+      <name>Maarten Beerepoot</name>
+      <email>m.t.p.beerepoot@umail.leidenuniv.nl</email>
+      <affiliation>CTCC/UiT</affiliation>
+    </participant>
+    .
+    .
+    .
+  </participants>
+
+Parsing an XML file
+----------------------------------------------------------
+
+lxml provides several ways of parsing xml data, xpath, objectify, events.
+
+Eventbased parsing.
+
+.. code-block:: python
+      :include: readparticipantsfromxml.py
+
+Result:
+
+.. code-block:: shell
+
+  participants 
+    
+  participant 
+      
+  name Heike Fliegl
+  email heike.fliegl@kjemi.uio.no
+  affiliation CTCC/UiO
+  participant 
+      
+  name Maarten Beerepoot
+  email m.t.p.beerepoot@umail.leidenuniv.nl
+  affiliation CTCC/UiT
+  participant 
+      
+  name Arne Bunkan
+  email a.j.c.bunkan@kjemi.uio.no
+  affiliation CTCC/UiO
+
+
+Summary
+----------------------------------------------------------
+
+* Python have many ways to parse text.
+* Use the simplest method you can, that is, prefer string builtins over regexps.
