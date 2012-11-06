@@ -186,6 +186,25 @@ Zen of functions
 * Functions should have a docstring.
 * Document *what* a function does, not *how* it does it.
 
+Input and output
+----------------------------------------------------------
+
+.. code-block:: python
+    :linenos:
+    :include: writefile.py
+
+Input and output
+----------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: readfile.py
+
+Modules and namespaces
+----------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: import.py
+
 Getting help
 ----------------------------------------------------------
 In iPython:
@@ -210,44 +229,6 @@ Using ``pydoc``:
 |   http://docs.python.org
 |   http://google.com 
 
-Input and output
-----------------------------------------------------------
-
-.. code-block:: python
-    :linenos:
-    :include: writefile.py
-
-Input and output
-----------------------------------------------------------
-.. code-block:: python
-    :linenos:
-    :include: readfile.py
-
-Modules and namespaces
-----------------------------------------------------------
-.. code-block:: python
-    :linenos:
-    :include: import.py
-
-Module search paths
-----------------------------------------------------------
-
-How and where Python looks for available modules can be configured using the
-``PYTHONPATH`` environment variable:
-
-.. code-block:: console
-
-    $ export PYTHONPATH=$PYTHONPATH:/path/to/my/stuff
-    $ python elderberry.py
-
-The search path can also be configured in Python:
-
-.. code-block:: python
-
-    import sys
-    sys.path.append('/path/to/my/stuff')
-    print(sys.path)
-
 Writing scripts
 ---------------------------------------------------------
 Instead of working inside the Python interpreter, we can write scripts using
@@ -269,7 +250,7 @@ first line in the of the script, and then change the file mode:
 .. code-block:: python
 
     #!/usr/bin/env python
-    print('Your mother was a hamster.')
+    def hamster(): print('Your mother was a hamster.')
 
 On Windows you don't have to do anything special, since the Python installer
 registers file with a ``.py`` ending as Python programs.
@@ -282,7 +263,7 @@ they are in your ``PYTHONPATH``:
 .. code-block:: pycon
 
     >>> import elderberry as eb
-    >>> eb.berry('lingonberry')
+    >>> eb.hamster()
 
 Organizing your code: packages
 ---------------------------------------------------------
@@ -305,13 +286,27 @@ Organizing your code: importing packages
 
 .. code-block:: python
     :linenos:
-
-    from cheese.dutch import maasdam
-    for i in masdam.holes(): 
-        eat(i)
-
-
+    :include: maasdam.py
     
+Module search paths
+----------------------------------------------------------
+
+How and where Python looks for available modules can be configured using the
+``PYTHONPATH`` environment variable:
+
+.. code-block:: console
+
+    $ export PYTHONPATH=$PYTHONPATH:/path/to/my/stuff
+    $ python elderberry.py
+
+The search path can also be configured in Python:
+
+.. code-block:: python
+
+    import sys
+    sys.path.append('/path/to/my/stuff')
+    print(sys.path)
+
 Some important built-in functions
 ----------------------------------------------------------
 .. code-block:: python
