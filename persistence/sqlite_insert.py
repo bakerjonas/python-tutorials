@@ -3,9 +3,9 @@ from __future__ import unicode_literals
 import sqlite3 as lite
 
 stian = ('Stian Bjørn Høgås', 'stian.hogas@uit.no', 'ITA')
-lecturers  = [('Jonas Juselius', 'jonas.juseliur@uit.no', 'ITA'),
+lecturers  = [('Jonas Juselius', 'jonas.juselius@uit.no', 'ITA'),
               ('Roy Dragseth', 'roy.dragseth@uit.no', 'ITA'),
-              ('Lars Ailo Bongo', 'larseb@cs.uit.no', 'IFI')]
+              ('Lars Ailo Bongo', 'larsab@cs.uit.no', 'IFI')]
 
 con = lite.connect('sqlite.db')
 c = con.cursor()
