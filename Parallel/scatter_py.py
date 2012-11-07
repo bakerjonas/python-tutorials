@@ -1,7 +1,8 @@
+#!/usr/bin/env python
 #
 # Simple scatter-gather example using mpi4py
 #
-# $ mpirun -np 4 python ./mpiex.py
+# $ mpirun -np 4 python ./foo.py
 #
 import numpy as np
 from mpi4py import MPI

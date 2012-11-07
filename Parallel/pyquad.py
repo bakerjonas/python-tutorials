@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+#!/usr/bin/env python
 
 def integrate_f(a, b, N):
     f = lambda x: x**2-x
