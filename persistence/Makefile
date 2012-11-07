@@ -1,4 +1,4 @@
-base = Numpy
+base = Persistence
 all: $(base).pdf 
 
 .PHONY: $(base).pdf
