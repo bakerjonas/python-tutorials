@@ -1,34 +1,31 @@
 #!/usr/bin/env python
 from mpi4py import MPI
-import numpy
-import sys
-import pyquad
+import numpy as np
+from scipy.integrate import quad
+import math
 
 comm = MPI.COMM_WORLD
 size = comm.Get_size()
 rank = comm.Get_rank()
 
-n = 4
-start = -20.0
-step = 10.0
+ival = (-20.0, 20.0)
+step = sum(map(abs, ival))/size
 
-view = []
+view = None
+if rank == 0:
+    foo = lambda i: (ival[0] + i * step, ival[0] + (i + 1) * step)
+    view = [ foo(i) for i in range(size)]
 
-for i in range(n):
-    a = start + i * step
-    b = a + step
-    view.append((a, b, 1000))
+# silly: scatter is better, but utilizing rank is best
+view = comm.bcast(view, root=0) 
 
-#print view
-
-comm.bcast(view, root=0)
-
-a, b, N = view[rank]
-I = pyquad.integrate_f(a, b, N)
+f = lambda x: math.exp(-0.1*x**2)
+a, b = view[rank]
+I = quad(f, a, b)[0]
 
 if rank == 0:
-    comm.reduce(0.0, I, op=MPI.SUM, root=0)
-    print I, pyquad.integrate_f(-20.0, 20.0, 4000)
+    I = comm.reduce(0.0, I, op=MPI.SUM, root=0)
+    print I, quad(f, -20.0, 20.0)[0]
 else:
     comm.reduce(I, None, op=MPI.SUM, root=0)
 
