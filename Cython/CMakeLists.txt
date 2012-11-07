@@ -10,4 +10,8 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     )
 
+cython_add_module(cyquad 
+    cyquad.pyx
+    )
+
 add_subdirectory(Fortran)

@@ -4,3 +4,5 @@
 *.swp
 *.pdf
 /.idea/
+build/
+Untitled*.ipynb
