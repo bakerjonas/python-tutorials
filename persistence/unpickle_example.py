@@ -1,6 +1,6 @@
 import cPickle as pickle
 
-print "\n\nUnickling lists."
+print "Unickling lists."
 
 with open('pickles.dat', 'r') as f:
     variety = pickle.load(f)
