@@ -1,6 +1,6 @@
 import cPickle as pickle
 
-print "\n\nPickling lists."
+print "Pickling lists."
 
 variety = ['sweet', 'hot', 'sour']
 shape = ['whole', 'spear', 'chip']

@@ -1,8 +1,8 @@
 .. role:: cover
 
-=============================
-:cover:'Persistence and serialization'
-=============================
+======================================
+:cover:`Persistence and serialization`
+======================================
 
 .. class:: cover
 
@@ -73,7 +73,7 @@ Shelving
 - Persistent dictionary-like object
     
     - Shelf files
-    
+
 - Anything you can pickle
 - Keys are strings
 
@@ -81,13 +81,13 @@ Shelf example
 ----------------------------------------------------------
 .. code-block:: python
     :linenos:
-    :include: shelf_example.py
+    :include: shelving_example.py
 
 Retrieve example
 ----------------------------------------------------------
 .. code-block:: python
     :linenos:
-    :include: retrieve_example.py
+    :include: unshelving_example.py
 
 Databases
 ----------------------------------------------------------
@@ -114,7 +114,7 @@ Databases cont'ed...
         - Same type data
         - Column name
 
-- Next: Working with databases
+- Fetch any data you like
 
 Working with databases
 ----------------------------------------------------------
@@ -125,17 +125,11 @@ Working with databases
     - INSERT INTO <table> VALUES...
     - SELECT <values> FROM <table> (WHERE <condition>)...
     - DROP TABLE
-    - DELETE FROM <table> 
-    .
-    .
-    .
-
-SQL examples
-----------------------------------------------------------
-
+    - DELETE FROM <table>
 
 Sqlite
 ----------------------------------------------------------
+
 - Lightweight database
 - No database server
 
@@ -143,22 +137,35 @@ Sqlite create table
 ----------------------------------------------------------
 .. code-block:: python
     :linenos:
-    :include: sqlite_create_example.py
+    :include: sqlite_create.py
+
+Sqlite drop table
+----------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: sqlite_drop.py
 
 Sqlite insert
 ----------------------------------------------------------
 .. code-block:: python
     :linenos:
-    :include: sqlite_insert_example.py
+    :include: sqlite_insert.py
 
-Sqlite create table
+Sqlite delete
 ----------------------------------------------------------
 .. code-block:: python
     :linenos:
-    :include: sqlite_select_example.py
+    :include: sqlite_delete.py
+
+Sqlite select
+----------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: sqlite_select.py
 
 Advanced use
 ----------------------------------------------------------
+
 - Foreign keys
 - Relation types
     
@@ -169,6 +176,6 @@ Advanced use
 - Views
 - Join
 
-WOLF
+Databases can become quite complex...
 ----------------------------------------------------------
 .. image:: wolf.png

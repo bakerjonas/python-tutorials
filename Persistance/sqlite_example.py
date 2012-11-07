@@ -5,7 +5,7 @@ class DbTest(object):
     def __init__(self, name):
         self.name = name
 
-    def createTables(self):
+    def createTable(self):
         con = lite.connect(self.name)
         c = con.cursor()
         c.execute('''CREATE TABLE persons
