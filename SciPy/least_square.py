@@ -14,6 +14,5 @@ measured = f(x) + 2 * np.random.randn(len(x))
 
 fit = leastsq(residual, (1.0, 2.0, 5.0), args=(measured, x))
 print "Fit parameters:", fit
-
 plt.plot(x, f(x), 'r', x, measured, 'ob', x, f(x, fit[0]))
 plt.show()

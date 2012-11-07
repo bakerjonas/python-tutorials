@@ -1,8 +1,8 @@
 .. role:: cover
 
-==================================
-:cover:`Numerical Python`
-==================================
+=========================================
+:cover:`Numerical and Scientific Python`
+=========================================
 
 .. class:: cover
 
@@ -18,17 +18,67 @@
    SetPageCounter 0
    PageBreak oneColumn
 
+Least squares fit
+----------------------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: least_square.py
+
+Least squares fit
+----------------------------------------------------------------------
+.. image:: least_squares.png
+    :scale: 75%
+
+Minimization
+----------------------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: minimize.py
+
+Minimization
+----------------------------------------------------------------------
+.. image:: minimization.png
+    :scale: 75%
+
+Interpolation
+----------------------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: interpolate.py
+
+Interpolation
+----------------------------------------------------------------------
+.. image:: interpolation.png
+    :scale: 75%
+
+Numerical integration
+----------------------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: quadrature.py
+
+Numerical integration
+----------------------------------------------------------------------
+.. image:: quadrature.png
+    :scale: 75%
+
+Vectorize
+----------------------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: vectorize.py
+
 Arrays
 ----------------------------------------------------------------------
 .. code-block:: python
     :linenos:
     :include: array.py
 
-Linear algebra
+Random numbers
 ----------------------------------------------------------------------
 .. code-block:: python
     :linenos:
-    :include: linalg.py
+    :include: random_numbers.py
 
 Opetations on arrays
 ----------------------------------------------------------------------
@@ -36,21 +86,15 @@ Opetations on arrays
     :linenos:
     :include: operators.py
 
-Random numbers
+Masked arrays
 ----------------------------------------------------------------------
 .. code-block:: python
     :linenos:
-    :include: random1.py
+    :include: mask.py
 
-Random numbers
+Linear algebra
 ----------------------------------------------------------------------
 .. code-block:: python
     :linenos:
-    :include: random2.py
-
-Examples
-----------------------------------------------------------------------
-.. code-block:: python
-    :linenos:
-    :include: numpy_example.py
+    :include: linalg.py
 
