@@ -7,9 +7,7 @@ lecturers  = [('Jonas Juselius', 'jonas.juselius@uit.no', 'ITA'),
               ('Roy Dragseth', 'roy.dragseth@uit.no', 'ITA'),
               ('Lars Ailo Bongo', 'larsab@cs.uit.no', 'IFI')]
 
-con = lite.connect('sqlite.db')
-c = con.cursor()
-c.execute('INSERT INTO persons VALUES(?, ?, ?)', stian)
-c.executemany('INSERT INTO persons VALUES(?, ?, ?)', lecturers)
-con.commit()
-c.close()
+with lite.connect('sqlite.db') as con:
+    c = con.cursor()
+    c.execute('INSERT INTO persons VALUES(?, ?, ?)', stian)
+    c.executemany('INSERT INTO persons VALUES(?, ?, ?)', lecturers)
