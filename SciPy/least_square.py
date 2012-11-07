@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib
 import matplotlib.pyplot as plt
 from scipy.optimize import leastsq
 
@@ -13,8 +12,8 @@ def residual(p, y, x):
 x = np.arange(0.0, 5.0, 0.1)
 measured = f(x) + 2 * np.random.randn(len(x))
 
-fit = leastsq(residual, (0.05, 2.0, 4.0), args=(measured, x))
+fit = leastsq(residual, (1.0, 2.0, 5.0), args=(measured, x))
 print "Fit parameters:", fit
 
-plt.plot(x, f(x), x, measured, 'or', x, f(x, fit[0]))
+plt.plot(x, f(x), 'r', x, measured, 'ob', x, f(x, fit[0]))
 plt.show()
