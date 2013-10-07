@@ -1,7 +1,7 @@
 .. role:: cover
 
 ==================================
-:cover:`Introduction to Python`
+:cover:`Introduction`
 ==================================
 
 .. class:: cover
@@ -29,69 +29,52 @@ About Python
   other Python programs.
 * Python is extensible
 * Python is just the language for you.
-* Python is just great!
+* Python is great!
 
 .. raw:: pdf
 
    PageBreak 
    Transition Dissolve 0
 
-Using the Python interpreter
+About this workshop
 ----------------------------------------------------------
-The default Python interpreter is called ``python``. It is used to run
-scripts and for simple interactive work:
+
+Day 1:
+    * Focus will be on developing essential problem solving skills and
+      familarity with useful libraries
+    * Text and file processing skills are essential for day-to-day work
+    * Working with numeric data is imperative to many scientists
+
+Day 2:
+    * Focus will be on program development, and strategies for writing longer
+      programs
+    * Techniques for avoiding messing (everything) up
+    * Python as a replacement for Excel, Matlab and Mathematica
+
+
+Installing missing library components
+----------------------------------------------------------
+
+* Canopy has a nice installer where you can install missing components
+* Access to large parts of the repository is restricted (unless you pay 199$)
+* Instead we shall use the standard Python installer
+  
+Open a terminal: ``xterm || cmd.exe || Terminal.app``  
 
 .. code-block:: shell
 
-    $ python
-    Python 2.7.3 (default, Sep 26 2012, 21:51:14) 
-    >>> 1 + 2
-    3
-    >>> ^D
-    $
+    $ easy_install pip  # pip is better than easy_install
+    $ pip install docopt
+    $ pip install pp
 
-Using the iPython interpreter
-----------------------------------------------------------
-For interactive work, iPython (``ipython``) provides a more elaborate
-interface with many enhancements:
-
-.. code-block:: shell
-
-    $ ipython 
-    IPython 0.13.1.rc2 -- An enhanced Interactive Python.
-
-    In [1]: "Hello" + " " + "World!"
-    Out[1]: 'Hello World!'
-
-    In [2]: ^D
-    Do you really want to exit ([y]/n)? y
-    $
-
-The iPython web notebook
+Downloading the examples
 ----------------------------------------------------------
 
-iPython also comes with an incredibly cool interactive web notebook:
-
-.. code-block:: shell
-
-    $ ipython notebook
-    [NotebookApp] The IPython Notebook is running at: http://127.0.0.1:8888/
-    [NotebookApp] Use Control-C to stop this server and shut down all kernels.
-    Created new window in existing browser session.
-
-The notebook allows you to use work cells, save and load files, plot
-functions, much like in Matlab or Mathematica. 
-
-You can drag and drop Python files on disk straight into the notebook and
-execute the file.
-
-
-Zen of functions
-----------------------------------------------------------
-* Functions should be short. 
-* Functions should do only one thing, and do it well.
-* Functions should have a docstring.
-* Document *what* a function does, not *how* it does it.
+# Start SmartGit
+# Solmeny swear that your use is non-commericial
+# Select ``Project -> Clone``
+# Fill in the URL: http://github.com/bakerjonas/python-tutorials.git
+# Save the project where you can find it easily (eg. Desktop)
 
 Getting help
 ----------------------------------------------------------
@@ -105,15 +88,13 @@ In iPython:
     >>> dir("foo")
     >>> dir(42)
 
-Using ``pydoc``:
-
-.. code-block:: console
-
-    $ pydoc dir
-    $ pydoc -p 8080
-    pydoc server ready at http://localhost:8080/
-
 | Least but not last: 
 |   http://docs.python.org
 |   http://google.com 
+
+Finally
+----------------------------------------------------------
+
+* You have completed the syntax traning, now we'll put your new skills to use!
+* Learning pogramming is a livelong endeavour
 
