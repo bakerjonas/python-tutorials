@@ -566,6 +566,14 @@ The code: grabnumbers.py
 .. code-block:: python
       :include: manyfiles/grabnumbers.py
 
+Exercises
+----------------------------------------------------------
+
+Modify ``grabnumbers.py`` to
+
+ #. Find the slowest compute node. Hint: the computer name is the second entry on the first line of each file.
+
+ #. Find all compute nodes with more than 10% more runtime than the fastest one.
 
 
 Summary
