@@ -28,7 +28,7 @@
   pageTemplates:
     coverPage:
         frames: []
-            [3cm, 0cm, 70%, 70%]
+            [1cm, 0cm, 70%, 70%]
         showHeader : false
         showFooter : false
         background : ../styles/cover.png
@@ -121,7 +121,7 @@
       parent: base
 
     cover:
-      textColor: white
+      textColor: black
 
     title-reference:
       parent: normal
@@ -318,7 +318,8 @@
       parent: heading
       fontName: stdBold
       fontSize: 175%
-      spaceAfter: 16
+      spaceAfter: 25
+      textColor: #880000
 
     heading2:
       parent: heading
