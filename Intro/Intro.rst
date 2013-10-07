@@ -21,15 +21,15 @@
 About Python
 ----------------------------------------------------------
 
-* Python is simple to use, but it is a real programming language.
-* Python enables programs to be written compactly and readably. 
-* Python comes with a large collection of standard modules.
-* Python is an interpreted language.
-* Python allows you to split your program into modules that can be reused in
-  other Python programs.
+* Python is easy to learn
+* Python is a real programming language
+* Python programs can be written compactly and readably
+* Python has a large collection of standard modules
+* Python is an interpreted language
+* Python is a dynamic language
 * Python is extensible
-* Python is just the language for you.
-* Python is great!
+* Python programs can be split into modules and reused in other Python programs
+* Python is the language for you!
 
 .. raw:: pdf
 
@@ -70,11 +70,11 @@ Open a terminal: ``xterm || cmd.exe || Terminal.app``
 Downloading the examples
 ----------------------------------------------------------
 
-# Start SmartGit
-# Solmeny swear that your use is non-commericial
-# Select ``Project -> Clone``
-# Fill in the URL: http://github.com/bakerjonas/python-tutorials.git
-# Save the project where you can find it easily (eg. Desktop)
+#. Start SmartGit
+#. Solmeny swear that your use is non-commericial
+#. Select ``Project -> Clone``
+#. Fill in the URL: http://github.com/bakerjonas/python-tutorials.git
+#. Save the project where you can find it easily (eg. Desktop)
 
 Getting help
 ----------------------------------------------------------
