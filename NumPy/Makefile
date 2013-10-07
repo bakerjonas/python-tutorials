@@ -1,4 +1,4 @@
-base = Numpy
+base = NumPy
 all: $(base).pdf 
 
 .PHONY: $(base).pdf

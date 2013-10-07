@@ -18,6 +18,42 @@
    SetPageCounter 0
    PageBreak oneColumn
 
+Arrays
+----------------------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: array.py
+
+Opetations on arrays
+----------------------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: operators.py
+
+Masked arrays
+----------------------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: mask.py
+
+Random numbers
+----------------------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: random_numbers.py
+
+Linear algebra
+----------------------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: linalg.py
+
+Vectorize
+----------------------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: vectorize.py
+
 Least squares fit
 ----------------------------------------------------------------------
 .. code-block:: python
@@ -61,40 +97,4 @@ Numerical integration
 ----------------------------------------------------------------------
 .. image:: quadrature.png
     :scale: 75%
-
-Vectorize
-----------------------------------------------------------------------
-.. code-block:: python
-    :linenos:
-    :include: vectorize.py
-
-Arrays
-----------------------------------------------------------------------
-.. code-block:: python
-    :linenos:
-    :include: array.py
-
-Random numbers
-----------------------------------------------------------------------
-.. code-block:: python
-    :linenos:
-    :include: random_numbers.py
-
-Opetations on arrays
-----------------------------------------------------------------------
-.. code-block:: python
-    :linenos:
-    :include: operators.py
-
-Masked arrays
-----------------------------------------------------------------------
-.. code-block:: python
-    :linenos:
-    :include: mask.py
-
-Linear algebra
-----------------------------------------------------------------------
-.. code-block:: python
-    :linenos:
-    :include: linalg.py
 
