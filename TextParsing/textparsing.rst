@@ -286,7 +286,7 @@ For more advanced text manipulations one needs to use regexps (REGular EXPressio
 
 * Regexps is a language for matching text.  
 * The syntax is really cryptic
-* Example regexp matching dates in format YYYY-MM-DD
+* Example regexp matching dates in format ``yyyy-mm-dd``, ``yyyy/mm/dd`` or ``yyyy.mm.dd``.
 
 .. code-block:: shell
 
@@ -300,11 +300,7 @@ Basics
 
 http://www.regular-expressions.info/reference.html
 
-
-Regexps in python.
-----------------------------------------------------------
-
-Regular Expression HowTo
+Python Regular Expression HowTo
 
 http://docs.python.org/2/howto/regex.html
 
