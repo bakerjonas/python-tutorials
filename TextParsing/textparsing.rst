@@ -44,13 +44,31 @@ The evil side, PERL:  What the h... does ``for(<>);`` mean???
 A word of advice from the trenches:  If you think you have written a really clever
 piece of code, think again.  Will you be able to understand this in six months?
 
+Use builtins!
+----------------------------------------------------------
+
+The python language has a LOT of functionality built into it.  The native operations on builtins are FAST.
+
+ ``tuple`` -- Unmutable arrays.cexibility.
+
+``tuple``, ``list`` and ``set`` have integer indexes.  ``dict`` can have (almost) any index.
+
+Also, a lot of the most common tasks are already implemented in the standard library.
+
+
+A word about dicts.
+----------------------------------------------------------
+
+``dict`` is a very powerful construction and can be used to solve problems where one needs a container for unstructured data elements.
+
+
 
 Manipulating text using builtin methods
 ----------------------------------------------------------
 
 The str type in python has many useful builtin methods for easy matching and manipulation.
 
-* Splitting strings into lists
+* Splitting strings into lists 
 * Stripping off redundant space
 * Selecting text based on substrings
 * Search and replace
