@@ -15,8 +15,8 @@ from lxml import etree
 participantelements = list()
 for p in participants:
     element = E.participant(E.name(p["name"]),
-			  E.email(p["email"]),
-			  E.affiliation(p["affiliation"]))
+                          E.email(p["email"]),
+                          E.affiliation(p["affiliation"]))
     participantelements.append(element)
 
 print etree.tostring(E.participants(*participantelements), pretty_print=True)

@@ -49,9 +49,15 @@ Use builtins!
 
 The python language has a LOT of functionality built into it.  The native operations on builtins are FAST.
 
- ``tuple`` -- Unmutable arrays.cexibility.
+ ``tuple`` -- Unmutable arrays.
 
-``tuple``, ``list`` and ``set`` have integer indexes.  ``dict`` can have (almost) any index.
+ ``list``  -- list of things (array-like)
+
+ ``set``   -- of unique tings.
+
+ ``dict``  -- Dictionary, a container with a lot of flexibility.
+
+``tuple`` and ``list`` have integer indexes.  ``dict`` can have (almost) any index.  ``set`` is a strange beast.
 
 Also, a lot of the most common tasks are already implemented in the standard library.
 
@@ -60,6 +66,26 @@ A word about dicts.
 ----------------------------------------------------------
 
 ``dict`` is a very powerful construction and can be used to solve problems where one needs a container for unstructured data elements.
+
+.. code-block:: shell
+
+  >>> a = {'first' : 1, 'second': 2, 'third' : 3, 'fourth' : 4}
+  >>> a.keys()
+  ['second', 'fourth', 'third', 'first']
+  >>> a.values()
+  [2, 4, 3, 1]
+  >>> a.items()
+  [('second', 2), ('fourth', 4), ('third', 3), ('first', 1)]
+  >>> for k, v in a.items():
+  ...     print "key=", k, "value=",v
+  ... 
+  key= second value= 2
+  key= fourth value= 4
+  key= third value= 3
+  key= first value= 1
+  >>> a['fifth'] = 5
+  >>> a
+  {'second': 2, 'fifth': 5, 'fourth': 4, 'third': 3, 'first': 1}
 
 
 
@@ -83,10 +109,6 @@ The split method can chunk up text to your liking.
 
 .. code-block:: shell
 
-      $ python
-      Python 2.7.3 (default, Jul 24 2012, 10:05:38) 
-      [GCC 4.7.0 20120507 (Red Hat 4.7.0-5)] on linux2
-      Type "help", "copyright", "credits" or "license" for more information.
       >>> text="This is a text string in Python"
       >>> print text.split()
       ['This', 'is', 'a', 'text', 'string', 'in', 'Python']
@@ -106,10 +128,6 @@ Often inputs contain to much whitespace, strip is your friend.
 
 .. code-block:: shell
 
-	$ python
-	Python 2.7.3 (default, Jul 24 2012, 10:05:38) 
-	[GCC 4.7.0 20120507 (Red Hat 4.7.0-5)] on linux2
-	Type "help", "copyright", "credits" or "license" for more information.
 	>>> text="    some text      "
 	>>> print "|",text,"|"
 	|     some text       |
@@ -137,10 +155,6 @@ You can search for substrings with the find method
 
 .. code-block:: shell
 
-	$ python
-	Python 2.7.3 (default, Jul 24 2012, 10:05:38) 
-	[GCC 4.7.0 20120507 (Red Hat 4.7.0-5)] on linux2
-	Type "help", "copyright", "credits" or "license" for more information.
 	>>> text="This is a string"
 	>>> print text.find('s')
 	3
@@ -188,8 +202,6 @@ Converting a non-integer will throw an exception.
 
 
 
-
-
 Complete example
 ----------------------------------------------------------
 
@@ -232,7 +244,40 @@ Exercises
 
 * Further info
 
-The inline docs on strings is pretty extensive,  help(str) in ipython should be a good start.
+The inline docs on strings is pretty extensive,  ``help(str)`` in ipython should be a good start.
+
+
+Sorting.
+----------------------------------------------------------
+
+Sorting stuff is often needed and Python provides a lot of neat things right out of the box.
+
+The ``list`` has a builtin sort-functionality
+
+.. code-block:: shell
+
+  >>> a = [1,3,5,7,9,2,4,6,8]
+  >>> a.sort()
+  >>> a
+  [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  >>> a.sort(reverse=True)
+  >>> a
+  [9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+Remark: ``list().sort()`` is done in place!
+
+The builtin function ``sorted()`` can produce a sorted copy of a list.
+
+.. code-block:: shell
+
+  >>> a = [1,3,5,7,9,2,4,6,8]
+  >>> sorted(a)
+  [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  >>> a
+  [1, 3, 5, 7, 9, 2, 4, 6, 8]
+
+More on sorting in Python: https://wiki.python.org/moin/HowTo/Sorting/
+
 
 Regexps
 ----------------------------------------------------------
@@ -504,6 +549,31 @@ Result:
   name Arne Bunkan
   email a.j.c.bunkan@kjemi.uio.no
   affiliation CTCC/UiO
+
+A concrete example: Numbergrabbing.
+----------------------------------------------------------
+
+Sometimes you need to make sense of a heap of rubbish...
+
+The ``TextParsing/manyfiles`` catalog contain a zip-file with a lot of text data, 300 files.
+Grab the relevant number from each file and find the max and min value.
+
+(Walk through interactive example)
+
+The code: grabnumbers.py
+----------------------------------------------------------
+
+.. code-block:: python
+      :include: manyfiles/grabnumbers.py
+
+Exercises
+----------------------------------------------------------
+
+Modify ``grabnumbers.py`` to
+
+ #. Find the slowest compute node. Hint: the computer name is the second entry on the first line of each file.
+
+ #. Find all compute nodes with more than 10% more runtime than the fastest one.
 
 
 Summary

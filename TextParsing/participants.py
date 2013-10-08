@@ -4,7 +4,7 @@ participants = list()
 for line in fd.readlines():
     if '@' in line:
         _, name, email, affiliation = map(str.strip, line.split(','))
-        p = dict(name=name, email=email, affiliation=affiliation)
+        p = {'name' : name, 'email' : email, 'affiliation' : affiliation}
         participants.append(p)
         
     if 'pending' in line:
