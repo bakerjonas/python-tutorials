@@ -1,14 +1,14 @@
 .. role:: cover
 
-======================================
-:cover:`Persistence and serialization`
-======================================
+===========================================
+:cover:`Persistent data and serialization`
+===========================================
 
 .. class:: cover
 
     ::
 
-        Stian Bjørn Høgås <stian.hogas@uit.no>
+        Jonas Juselius <jonas.juselius@uit.no>
     
         HPC@UiT
 
@@ -18,164 +18,75 @@
    Transition Dissolve 1
    PageBreak oneColumn
 
-Persistence
+Serialization and persistence 
 ----------------------------------------------------------
-
-- Storing data
-- Outlives the creating process
-
-    - file
-    - database
-
-Serialization
-----------------------------------------------------------
-
-- Converting data into a format that can be
-
-    - stored
-    - transmitted
-    - retrieved
-
-- Python has several methods
-
-    - pickle (subclassable)
-    - cPickle (fast)
+* Serialization is the act of converting an object into a form which can be
+  stored and later resurrected
+* Serialized objects can be stored on disk for later use, e.g. saving the
+  state of the program so that it can re resumed later
+* Serialized objects can also be transmitted over the net, e.g. http, MPI,
+  mail...
+* Data and objects which have been stored for later use are said to be
+  persistent
 
 Pickling
 ----------------------------------------------------------
+Python can save more than just numbers and text: It can store whole objects!
+This is known as *pickling* or *serializing* objects.
 
-- You can pickle a variety of objects, including
-
-    - None, True, and False
-    - numbers
-    - strings
-    - list, dicts, tuples
-    - functions, classes, instances of classes
-
-- Pickle is first in, first out
-- Unpickles in the same order 
-
-Pickle example
-----------------------------------------------------------
 .. code-block:: python
     :linenos:
-    :include: pickle_example.py
-    
-Unpickle example
-----------------------------------------------------------
-.. code-block:: python
-    :linenos:
-    :include: unpickle_example.py
+    :include: pickles.py
 
 Shelving
 ----------------------------------------------------------
+Shelving is a form of pickling, where the objects are stored in a
+*persistent* dictionary on disk:
 
-- Persistent dictionary-like object
-    
-    - Shelf files
-
-- Anything you can pickle
-- Keys are strings
-
-Shelf example
-----------------------------------------------------------
 .. code-block:: python
     :linenos:
-    :include: shelving_example.py
+    :include: shelf.py
 
-Retrieve example
+Relational databases
 ----------------------------------------------------------
-.. code-block:: python
-    :linenos:
-    :include: unshelving_example.py
+* Data is stored in tables
+* Entries in tables are stored in rows 
+* Each row is uniquely identified by a *primary key*
+* Columns define the structure of the table (eg. data types) 
+* Columns are identified by name
+* Tables can be chained by referring to each other
 
-Databases
-----------------------------------------------------------
-
-- Organized collection of data
-- Models relevant aspects of reality
-
-    - availability of rooms in a hotel
-
-- Supports processes requiring this information
-
-    - finding vacancies in a hotel
-
-Databases cont'ed...
+Basic SQL
 ----------------------------------------------------------
 
-- Data is stored in tables
-    
-    - Rows
-        - Related data
-        - Primary key
-        
-    - Columns
-        - Same type data
-        - Column name
-
-- Fetch any data you like
-
-Working with databases
-----------------------------------------------------------
-
-- SQL (Structured Query Language)
-- Statements
+* SQL (Structured Query Language) is a *declarative* domain-specific language
+* Example statements:
     - CREATE TABLE...
     - INSERT INTO <table> VALUES...
     - SELECT <values> FROM <table> (WHERE <condition>)...
-    - DROP TABLE
     - DELETE FROM <table>
 
-Sqlite
-----------------------------------------------------------
-
-- Lightweight database
-- No database server
-
-Sqlite create table
+Create table
 ----------------------------------------------------------
 .. code-block:: python
     :linenos:
     :include: sqlite_create.py
 
-Sqlite drop table
-----------------------------------------------------------
-.. code-block:: python
-    :linenos:
-    :include: sqlite_drop.py
-
-Sqlite insert
+Insert data into a table
 ----------------------------------------------------------
 .. code-block:: python
     :linenos:
     :include: sqlite_insert.py
 
-Sqlite delete
-----------------------------------------------------------
-.. code-block:: python
-    :linenos:
-    :include: sqlite_delete.py
-
-Sqlite select
+Searching for data
 ----------------------------------------------------------
 .. code-block:: python
     :linenos:
     :include: sqlite_select.py
 
-Advanced use
+Deleting data from a table
 ----------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: sqlite_delete.py
 
-- Foreign keys
-- Relation types
-    
-    - One-to one
-    - One-to-many
-    - Many-to-many
-    
-- Views
-- Join
-
-Databases can become quite complex...
-----------------------------------------------------------
-.. image:: wolf.png
