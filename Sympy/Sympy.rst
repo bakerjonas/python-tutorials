@@ -21,9 +21,9 @@
 About SympPy
 ----------------------------------------------------------
 
-* SymPy was stared by Ondrej Certik in 2005.
+* SymPy was started by Ondrej Certik in 2005.
 * SymPy is a Python library for symbolic mathematics.
-* Sympy aims to become a full-featured computer algebra system (CAS).
+* SymPy aims to become a full-featured computer algebra system (CAS).
 * SymPy aims to be comprehensible and easily extensible.
 * SymPy is written entirely in Python and does not require any
   external libraries.
