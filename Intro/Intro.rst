@@ -18,30 +18,12 @@
    Transition Dissolve 1
    PageBreak oneColumn
 
-About Python
-----------------------------------------------------------
-
-* Python is easy to learn
-* Python is a real programming language
-* Python programs can be written compactly and readably
-* Python has a large collection of standard modules
-* Python is an interpreted language
-* Python is a dynamic language
-* Python is extensible
-* Python programs can be split into modules and reused in other Python programs
-* Python is the language for you!
-
-.. raw:: pdf
-
-   PageBreak 
-   Transition Dissolve 0
-
 About this workshop
 ----------------------------------------------------------
 
 Day 1:
     * Focus will be on developing essential problem solving skills and
-      familarity with useful libraries
+      familiarity with useful libraries
     * Text and file processing skills are essential for day-to-day work
     * Working with numeric data is imperative to many scientists
 
@@ -51,6 +33,11 @@ Day 2:
     * Techniques for avoiding messing (everything) up
     * Python as a replacement for Excel, Matlab and Mathematica
 
+
+.. raw:: pdf
+
+   PageBreak 
+   Transition Dissolve 0
 
 Installing missing library components
 ----------------------------------------------------------
@@ -71,10 +58,23 @@ Downloading the examples
 ----------------------------------------------------------
 
 #. Start SmartGit
-#. Solmeny swear that your use is non-commericial
+#. Solemnly swear that your use is non-commercial
 #. Select ``Project -> Clone``
 #. Fill in the URL: http://github.com/bakerjonas/python-tutorials.git
 #. Save the project where you can find it easily (eg. Desktop)
+
+About Python
+----------------------------------------------------------
+
+* Python is easy to learn
+* Python is a real programming language
+* Python programs can be written compactly and readably
+* Python has a large collection of standard modules
+* Python is an interpreted language
+* Python is a dynamic language
+* Python is extensible
+* Python programs can be split into modules and reused in other Python programs
+* Python is the language for you!
 
 Getting help
 ----------------------------------------------------------
@@ -95,6 +95,8 @@ In iPython:
 Finally
 ----------------------------------------------------------
 
-* You have completed the syntax traning, now we'll put your new skills to use!
-* Learning pogramming is a livelong endeavour
+* By now you should have completed the basic Python course. 
+  Now we'll put your new skills to use!
+* Programming is about problem solving
+* Learning programming is a lifelong endeavour
 
