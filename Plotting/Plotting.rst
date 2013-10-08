@@ -48,19 +48,35 @@ Mayavi:
     Powerful 3D plotting library based on VTK. Very similar interfaces as
     matplotlib.
 
-
 Matplotlib principles
 ----------------------------------------------------------
-* pyplot and pylab
-* plots and axes
-* subplots
-* cla, clf, gca, gcf
-* saving
+* matplotlib has two major interfaces: pyplot and pylab
+* matplotlib is a state machine: plots exist somewhere in some global state
+* matplotlib operates with primary concepts:
+    Figure: figures are like a canvas, eg. the complete "plot" 
+    Axes: plots are build from axes, eg. the stuff to be plotted
+* Plots can be subdivided with::
+
+    subplot(nrows, ncols, plotnum)
+* Some important procedures::
+
+    plot(), figure(), subfigure(), gca(), gcf(), cla(), clf()
+* Plots can be drawn on the screen with ``show()`` saved to disk ``savefig()``
 
 Simple plotting
 ----------------------------------------------------------
 .. code-block:: python
-    :include: lines.py
+    :include: oneline.py
+
+Multiple lines
+----------------------------------------------------------
+.. code-block:: python
+    :include: twolines.py
+
+Multiple figures
+----------------------------------------------------------
+.. code-block:: python
+    :include: twofigs.py
 
 Subplots 
 ----------------------------------------------------------

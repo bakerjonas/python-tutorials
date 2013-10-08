@@ -10,4 +10,4 @@ line1.set_dashes(dashes)
 plt.title("sin(x) w/ custom dashes")
 
 plt.show()
-plt.savefig('lines.pdf')
+#plt.savefig('lines.pdf')
