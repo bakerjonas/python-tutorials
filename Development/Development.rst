@@ -63,6 +63,7 @@ Zen of manging source code
   collaboration
 * Git allows you to go back in time: no more backup copies
 * With git, you can easily work on separate versions without losing your head
+* Git happens: http://vimeo.com/46010208
 
 Zen of data
 ----------------------------------------------------------
