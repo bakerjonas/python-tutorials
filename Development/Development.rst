@@ -1,7 +1,7 @@
 .. role:: cover
 
 ==================================
-:cover:`Writing progams`
+:cover:`Writing programs`
 ==================================
 
 .. class:: cover
