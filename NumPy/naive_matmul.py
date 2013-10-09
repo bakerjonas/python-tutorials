@@ -1,12 +1,12 @@
 import os
 
 def make_matrix(n):
-    A = []
+    M = []
     for i in range(n):
-        A.append(range(n))
+        M.append(range(n))
         for j in range(n):
-            A[i][j] = i + j
-    return A
+            M[i][j] = float(i + j)
+    return M
 
 def matmul_lists(A, B):
     C = []
@@ -21,10 +21,9 @@ def matmul_lists(A, B):
     return C
 
 A = make_matrix(500)
-B = make_matrix(500)
+B = [[float(i+j) for j in range(500)] for i in range(500)]
 
 t0 = os.times()[0]
 matmul_lists(A, B)
-print "t(vec):", os.times()[0] - t0
-
+print "t(dot):", os.times()[0] - t0
 
