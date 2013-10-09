@@ -1,14 +1,12 @@
-import sqlite3 as lite
+import sqlite3 
 
-ita = ('ITA',)
-
-con = lite.connect('sqlite.db')
+con = sqlite3.connect('mydata.db')
 c = con.cursor()
 c.execute('''SELECT COUNT(*) FROM persons 
-    WHERE affiliation=? ORDER BY name''', ita)
+        WHERE affiliation=? ORDER BY name''', ('ITA',))
 print c.fetchone()
 c.execute('''SELECT * FROM persons 
-    WHERE affiliation=? ORDER BY name''', ita)
-print c.fetchall()
+    WHERE affiliation=? ORDER BY name''', ('ITA',))
+for i in c.fetchall(): print i
 con.commit()
-c.close()
+con.close()

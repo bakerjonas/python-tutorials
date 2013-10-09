@@ -1,5 +1,5 @@
-from mpl_toolkits.basemap import Basemap
 import matplotlib.pyplot as plt
+from mpl_toolkits.basemap import Basemap
 import numpy as np
 
 map = Basemap(llcrnrlat=50.0, urcrnrlat=80.0,

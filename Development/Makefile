@@ -1,4 +1,4 @@
-base = Scripting
+base = Development
 all: $(base).pdf 
 
 .PHONY: $(base).pdf

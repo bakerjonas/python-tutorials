@@ -1,10 +1,7 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-import sqlite3 as lite
+import sqlite3 
 
-name = ('Stian Bjørn Høgås',)
-con = lite.connect('sqlite.db')
+con = sqlite3.connect('mydata.db')
 c = con.cursor()
-c.execute('DELETE FROM persons WHERE name = ?', name)
+c.execute('DELETE FROM persons WHERE name = ?', ('Admin',))
 con.commit()
-c.close()
+con.close()

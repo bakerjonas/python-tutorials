@@ -18,6 +18,14 @@
    SetPageCounter 0
    PageBreak oneColumn
 
+NumPy and SciPy
+----------------------------------------------------------------------
+* NumPy provides functions for fast, multi-dimensional numerical arrays
+* NumPy has a large number of high-level functions operating on arrays
+* The SciPy packages adds functions for more specialiced mathematical
+  operations to NumPy: Linear algebra, FFT, image manipulation, signal
+  processing, optimization, quadrature, etc.
+
 Arrays
 ----------------------------------------------------------------------
 .. code-block:: python

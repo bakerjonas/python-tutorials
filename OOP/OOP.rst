@@ -21,14 +21,14 @@
 Object-Oriented Programming
 ---------------------------------------------------------
 * In *procedual programming* the focus is on operations applied to data
-* In *object-oriented programming* the focus is on the data the operations
-  that apply to the data
+* *Object-oriented programming* focuses on the data, together with operations
+  on the data
 * OOP *can* provide nice structure to programs and make programs more readable
   and well orgainzed
-* The fundamental entity in OOP is the *class*, which provide the stencil
-  from which *objects* are created (strings, files, ...)
-* Using classes we can easily separate the *interfaces* and the
-  *implementation*
+* The fundamental entity in OOP is the *class*, which acts as a stencil
+  for creating  *objects*  (eg. strings, files, arrays, dicts...)
+* Using classes we can cleanly separate the *interfaces* and the
+  *implementation* (the 'what' from the 'how')
 * Classes are used to hide the *implementation* details and *data* 
 * Classes can be organized in parent-chiled hierarchies, where the children
   inherit properties of their parents
@@ -47,13 +47,14 @@ Class variables
 
 Class customization
 -----------------------------------------------------------
-A really cool feature of Python classes is that they can be made to behave
+A feature of Python classes is that they can be made to behave
 like standard types: E.g. printed, added, assigned, compared, called, etc.
 
 The customization is done using special operator methods, e.g. ``__init__``,
 ``__str__``. Some other interesting operators are::
 
     __getitem__(self, key)  # Behave like a list or dict
+    __getattr__(self, key)  # Add dynamic attributes to the object
     __call__(self, ...)     # Call the object like a function
     __eq__(self, other)     # Compare objs using ==
     __add__(self, other)    # Add stuff using +
@@ -69,4 +70,64 @@ Inheritance
 .. code-block:: python
     :linenos:
     :include: inherit.py
+
+Iterators
+---------------------------------------------------------
+Iterators allow us to make objects which behave like lists, i.e. they can be
+looped over.
+
+.. code-block:: python
+    :linenos:
+    :include: iter.py
+
+Functional programming 
+---------------------------------------------------------
+* Functional programming emphasizes programming with functions (in the
+  mathematical sense)
+* In functional programming, variables are not allowed!
+* Instead of loops, recursion is used (or map, filter, reduce)
+* Programming functionally gives robust code
+
+.. code-block:: python
+    :linenos:
+    :include: state.py
+
+Functional programming 
+---------------------------------------------------------
+
+If we avoid stateful variables, whole classes of possible bugs become
+impossible.
+
+.. code-block:: python
+    :linenos:
+    :include: nostate.py
+
+Ordering of statements no longer matter.
+
+Functional programming 
+---------------------------------------------------------
+.. code-block:: python
+    :linenos:
+    :include: functional.py
+
+Decorators
+---------------------------------------------------------
+* Decorators are special functions which take functions as input and return a
+  new function
+* Decorators can be seen as function transformations 
+* Decorators allow you to inject or modify code in functions (or classes)
+
+.. code-block:: python
+    :linenos:
+    :include: decorate.py
+
+Zen of objects
+---------------------------------------------------------
+
+* Keep your classes small
+* Keep your interfaces smaller
+* Don't add unnecessary data to objects
+* Explicit data is better than implcit
+* Methods that don't modify or use class data are better
+* Immutability rules
 

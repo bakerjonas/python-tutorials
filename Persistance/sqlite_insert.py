@@ -1,13 +1,11 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
 import sqlite3 as lite
 
-stian = ('Stian Bjørn Høgås', 'stian.hogas@uit.no', 'ITA')
-lecturers  = [('Jonas Juselius', 'jonas.juselius@uit.no', 'ITA'),
-              ('Roy Dragseth', 'roy.dragseth@uit.no', 'ITA'),
-              ('Lars Ailo Bongo', 'larsab@cs.uit.no', 'IFI')]
+lecturers = [('Jonas Juselius', 'jonas.juselius@uit.no', 'ITA'),
+            ('Roy Dragseth', 'roy.dragseth@uit.no', 'ITA'),
+            ('Dan Jonsson', 'dan.jonsson@uit.no', 'ITA')]
+adm = ('Admin', 'noreply@uit.no', 'N/A')
 
-with lite.connect('sqlite.db') as con:
+with lite.connect('mydata.db') as con:
     c = con.cursor()
-    c.execute('INSERT INTO persons VALUES(?, ?, ?)', stian)
+    c.execute('INSERT INTO persons VALUES(?, ?, ?)', adm)
     c.executemany('INSERT INTO persons VALUES(?, ?, ?)', lecturers)
