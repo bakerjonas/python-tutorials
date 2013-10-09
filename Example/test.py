@@ -10,6 +10,7 @@ from scipy import misc, ndimage
 class TestImpFunctions(unittest.TestCase):
     def setUp(self):
         self.img = misc.lena()
+        misc.imsave('lena.png', self.img)
 
     def test_blur(self):
         img = pimp.do_blur(self.img, 0.0)

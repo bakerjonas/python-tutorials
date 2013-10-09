@@ -1,11 +1,12 @@
+#!/usr/bin/env python
 """Usage:
   pimp.py blur [options] <infile> 
-  pimp.py sharp [options] <infile> 
+  pimp.py sharp [options] [--alpha=<int>] <infile> 
 
 Options:
     -h, --help                      Show this screen
     -v, --version                   Program version
-    -f <float>, --factor=<float>    Factor for operation.
+    -f <int>, --factor=<int>    Factor for operation.
 """
 from docopt import docopt
 import numpy as np
@@ -19,32 +20,35 @@ def main():
     fname = args['<infile>']
     img = misc.imread(fname) 
 
-    if 'fac' in args:
-        fac = args['fac']
+    if '--factor' in args:
+        fac = int(args['--factor'])
     else:
-        fac = 1.0
+        fac = 1
 
     if args['blur']: 
-        do_blur(img, fac)
+        img = do_blur(img, fac)
     elif args['sharp']: 
-        do_sharp(img, fac)
+        if '--alpha' in args:
+            alpha = int(args['--alpha'])
+        else:
+            alpha = 1
+        img = do_sharp(img, fac, alpha)
 
     showtime(img)
 
 def do_blur(img, fac):
     "Perform gaussian blur on image and return"
-    return ndimage.gaussian_filter(img, 3)
+    return ndimage.gaussian_filter(img, fac)
 
-def do_sharp(img, fac):
+def do_sharp(img, fac, alpha):
     "Apply sharpening filter on blurred image"
-    filtered = ndimage.gaussian_filter(img, 1.0)
-    alpha = 30
+    filtered = ndimage.gaussian_filter(img, fac)
     sharpened = img + alpha * (img - filtered)
     return sharpened
 
 def showtime(img):
     "Image, flaunt it!"
-    plt.imshow(img)
+    plt.imshow(img, cmap=plt.cm.gray)
     plt.show()
 
 if __name__ == '__main__':
